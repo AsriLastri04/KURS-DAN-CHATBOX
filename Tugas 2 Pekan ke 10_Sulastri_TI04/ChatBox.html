@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box </title>
+    <style>
+        body {
+            width: 400px;
+            min-height: 500px;
+            border: 5px solid rgb(216, 36, 36);
+            margin: auto;
+            box-sizing: border-box;
+            position: relative;
+            margin-top: 50px;
+            
+        }
+        #pesan {
+            position: absolute;
+            bottom: 0;
+            width: 350px;
+            color: darkblue;
+            padding: 5px;
+        }
+        button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 5px;
+            color:indianred;
+        }
+        h1{
+            color:navy;
+            text-align: center;
+            border-bottom: 5px solid  rgb(216, 36, 36);
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat Box</h1>
+    <p id="hasil"></p>
+    <input type="text" id="pesan" onchange="kirim()">
+    <button onclick="kirim()">kirim</button>
+
+
+    <script>
+        let masukan = document.getElementById("pesan")
+        let hasil = document.getElementById("hasil")
+        let penampung =""
+
+        function kirim() {
+            penampung += masukan.value + "<br>"
+            hasil.innerHTML = penampung
+            masukan.value =""
+        }
+        
+    </script>
+</body>
+</html>
